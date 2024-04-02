@@ -3,10 +3,8 @@ package com.pokesearch.cli;
 import com.beust.jcommander.Parameter;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 public class CLIArguments {
     CLIArguments(){
 
@@ -14,20 +12,20 @@ public class CLIArguments {
     @Parameter(
         required = true,
         descriptionKey = "KEYWORD",
-        validateWith = CLIKeywordValidator.class,
-        description = "KEYWORD"
+        description = "Terminal tool keyword"
     )
     private String keyword;
     @Parameter(
         names = {"--all", "-a"},
-        description = "show all pokemons"
+        description = "show all pokemon names"
     )
     private boolean allPokemons;
     @Parameter(
-        names = {"--page", "-p"},
-        description = "the API return 20 results, use a number to the page"
+        names = {"--name", "-n"},
+        validateWith = CLIKeywordValidator.class,
+        description = "show information about a pokemon"
     )
-    private int page = 0;
+    private String onePokemon;
     @Parameter(
         names = "--help",
         help = true,
@@ -38,7 +36,7 @@ public class CLIArguments {
 
     @Override
     public String toString() {
-        return "CLIArguments [keyword = " + keyword + ", all = " + allPokemons + ", page = " + page + ",isHelp = " + isHelp + "]";
+        return "CLIArguments [keyword = " + keyword + ", all = " + allPokemons + ",isHelp = " + isHelp + "]";
     }
 
     public static CLIArguments newInstance(){
