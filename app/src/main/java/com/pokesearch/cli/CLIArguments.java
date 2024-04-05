@@ -1,6 +1,8 @@
 package com.pokesearch.cli;
 
 import com.beust.jcommander.Parameter;
+import com.pokesearch.cli.validators.CLIHelpValidator;
+import com.pokesearch.cli.validators.CLIKeywordValidator;
 
 import lombok.Getter;
 

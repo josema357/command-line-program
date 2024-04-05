@@ -3,3 +3,12 @@
 
 # Ignore Gradle build output directory
 build
+
+#Configuration de IDE
+.vscode/
+
+# Archivos de configuración de Gradle
+*.iml
+*.ipr
+*.iws
+out/
