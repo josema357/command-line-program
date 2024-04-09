@@ -10,6 +10,7 @@ import com.beust.jcommander.JCommander;
 import com.pokesearch.api.PokeApiRetrofit;
 import com.pokesearch.cli.CLIArguments;
 import com.pokesearch.controller.AllPokemon;
+import com.pokesearch.controller.AllRegion;
 import com.pokesearch.controller.OnePokemon;
 import com.pokesearch.service.PokeService;
 
@@ -17,6 +18,7 @@ import com.pokesearch.service.PokeService;
  * Usage:
  * --all: Request information for all Pokemon
  * --name: Request information for a specific Pokemon by name
+ * --region: Request information for all region
  */
 public class App {
     public static void main(String[] args) throws Throwable {
@@ -40,6 +42,12 @@ public class App {
              */ 
             else if (arguments.getOnePokemon() != null) {
                 OnePokemon.requestOnePokemon(service, arguments);
+            }
+            /*
+             * The user enters the --region argument
+             */
+            else if(arguments.isAllRegions()){
+                AllRegion.requestAllRegion(service);
             }
         });
     }

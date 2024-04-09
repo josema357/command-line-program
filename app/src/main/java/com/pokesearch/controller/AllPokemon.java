@@ -23,6 +23,7 @@ public class AllPokemon {
                     System.exit(0);
                 } else {
                     System.err.println("Error: " + response.code() + " " + response.message());
+                    System.exit(0);
                 }
             }
 

@@ -29,6 +29,11 @@ public class CLIArguments {
     )
     private String onePokemon;
     @Parameter(
+        names = {"--region", "-r"},
+        description = "Show all region names"
+    )
+    private boolean allRegions;
+    @Parameter(
         names = "--help",
         help = true,
         validateWith = CLIHelpValidator.class,
