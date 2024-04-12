@@ -15,7 +15,7 @@ public class RegionAllResponse {
         + "Total amount : " + count + "\n";
     int index = 1;
     int indexjump = 0;
-    int minWidth = 38;
+    int minWidth = 20;
     for (Region region : results) {
       output += String.format("%-" + minWidth + "s", "[" + index + "] " + region.getName());
       if (index - 4 == indexjump) {

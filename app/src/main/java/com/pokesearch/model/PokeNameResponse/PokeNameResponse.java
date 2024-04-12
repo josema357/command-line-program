@@ -33,3 +33,16 @@ public class PokeNameResponse {
   }
 
 }
+
+@Data
+class PokeStats {
+    private Integer base_stat;
+    private Integer effort;
+    private Stat stat;
+}
+
+@Data
+class Stat {
+    private String name;
+    private String url;
+}
